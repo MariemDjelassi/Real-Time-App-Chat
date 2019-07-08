@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+    <div *ngIf="isConnected === false" class="element">
+        <button mat-button routerLink="/RegisterPage">Sign Up</button>
+        <button mat-button routerLink="/LoginPage">Sign In</button>
+    </div>
+    <span class="eltmt">Real Time Chat Room</span>
+    <div *ngIf="isConnected === true">
+        <a routerLink="javascript:void(0);" style="color:white">Hi !</a>
+
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <!-- <img src="http://localhost:3000/Upload/download/{{freelancer?.profileImage}}" class="rounded-circle z-depth-0"
+              alt="avatar image" height="30" width="30"> -->
+            <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="logOut()">
+                <mat-icon>exit_to_app</mat-icon>
+                <span>Logout</span>
+            </button>
+        </mat-menu>
+    </div>
+</mat-toolbar>
